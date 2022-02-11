@@ -1,7 +1,9 @@
-import { useState } from "react/cjs/react.development"
+import { useState } from "react"
 import axios from "axios";
 
-const LoginForm = () => {
+const projectID = "1630e805-1722-427d-a331-d3b38840e04f";
+
+const Modal = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -9,7 +11,7 @@ const LoginForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const authObject = { 'Project-ID': "1630e805-1722-427d-a331-d3b38840e04f", 'User-Name': username, 'User-Secret': password }
+        const authObject = { 'Project-ID': projectID, 'User-Name': username, 'User-Secret': password }
 
         try {
             await axios.get('https://api.chatengine.io/chats', { headers: authObject });
@@ -41,4 +43,4 @@ const LoginForm = () => {
         </div>
     )
 }
-export default LoginForm;
+export default Modal;

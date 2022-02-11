@@ -63,4 +63,4 @@ const ChatFeed = (props) => {
     )
 }
 
-export default ChatFeed
+export default ChatFeed;
